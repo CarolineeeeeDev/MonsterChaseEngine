@@ -1,0 +1,19 @@
+{
+  "name": "Monster",
+  "controller": {
+    "type": "monster",
+    "initializer": {
+      "name": "Monster"
+    }
+  },
+
+  "components": {
+
+    "AIComponent": {
+
+    },
+    "RendererComponent": {
+      "sprite_texture_source": "data\\Monster.dds"
+    }
+  }
+}
