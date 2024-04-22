@@ -1,0 +1,40 @@
+#include "EntityManager.h"
+#include "Timing.h"
+#include "Physics.h"
+#include "AI.h"
+#include "Renderer.h"
+
+using namespace Engine;
+
+void EntityManager::update(bool bQuit,bool isGameOver, std::shared_ptr<EntityManager> manager)
+{
+	for (std::shared_ptr<Entity> entity : entities)
+	{
+
+		if (entity->hasComponent<Engine::TimingComponent>())
+		{
+			entity->GetComponent<Engine::TimingComponent>().Engine::TimingComponent::update();
+		}
+		if (entity->hasComponent<Engine::PhysicsComponent>())
+		{
+			entity->GetComponent<Engine::PhysicsComponent>().Engine::PhysicsComponent::update();
+		}
+		if (entity->hasComponent<Engine::AIComponent>())
+		{
+			entity->GetComponent<Engine::AIComponent>().Engine::AIComponent::update();
+		}
+	}
+	std::shared_ptr<RendererComponent> render = std::make_shared<RendererComponent>();
+	render->update(bQuit, manager);
+
+}
+
+void EntityManager::addEntity(std::shared_ptr<Entity> gameObject)
+{
+	entities.insert(entities.end(), gameObject);
+}
+
+void EntityManager::eraseEntity(std::shared_ptr<Entity> gameObject)
+{
+}
+

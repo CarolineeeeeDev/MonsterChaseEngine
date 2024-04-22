@@ -1,0 +1,28 @@
+
+{
+  "name": "Player",
+  "controller": {
+    "type": "player",
+    "initializer": {
+      "name": "Player"
+    }
+  },
+
+  "components": {
+    "TimingComponent": {
+
+    },
+    "PhysicsComponent": {
+      "mass": 100.0,
+      "k": 0.000865,
+      "maxSpeed": 2.0,
+      "minSpeed": -2.0,
+      "velocity": "Point2D(0.0f, 0.0f)",
+      "dragForce2D": "Point2D(0.0f, 0.0f)",
+      "force2D": "Point2D(0.0f, 0.0f)"
+    },
+    "RendererComponent": {
+      "sprite_texture_source": "data\\Player.dds"
+    }
+  }
+}
